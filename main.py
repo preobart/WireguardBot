@@ -5,7 +5,11 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode 
 from config_data.config import Config, load_config
+<<<<<<< HEAD
 from handlers import user_handlers
+=======
+from handlers import user_handlers, other_handlers
+>>>>>>> 48e29d0b0e55141c0ae7a34ba297511a19c9e5bd
 from keyboards.main_menu import set_main_menu
 
 logger = logging.getLogger(__name__)
@@ -26,6 +30,10 @@ async def main():
     await set_main_menu(bot)
     
     dp.include_router(user_handlers.router)
+<<<<<<< HEAD
+=======
+    dp.include_router(other_handlers.router)
+>>>>>>> 48e29d0b0e55141c0ae7a34ba297511a19c9e5bd
     
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
